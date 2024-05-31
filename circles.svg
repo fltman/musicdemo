@@ -1,0 +1,26 @@
+<svg width="1320" height="1320" xmlns="http://www.w3.org/2000/svg">
+    <!-- Define the first circle with a radius of 25, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="25" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the second circle with a radius of 80, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="80" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the third circle with a radius of 135, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="135" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the fourth circle with a radius of 190, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="190" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the fifth circle with a radius of 245, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="245" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the sixth circle with a radius of 300, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="300" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the seventh circle with a radius of 355, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="355" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the eighth circle with a radius of 410, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="410" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the ninth circle with a radius of 465, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="465" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the tenth circle with a radius of 520, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="520" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the eleventh circle with a radius of 575, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="575" fill="none" stroke="black" stroke-width="30"/>
+    <!-- Define the twelfth circle with a radius of 630, fill none, and a black stroke of 30 -->
+    <circle cx="660" cy="660" r="630" fill="none" stroke="black" stroke-width="30"/>
+</svg>

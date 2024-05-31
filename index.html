@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Audio Visualizer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #000; /* Ensure the background is dark to highlight transparency */
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 2px;
+            width: 80vmin;
+            height: 80vmin;
+            margin: auto;
+            perspective: 1000px;
+            xanimation: rotateGrid 20s infinite linear;
+            z-index: 2; /* Ensure the visualizer grid is above the video */
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            transform-style: preserve-3d;
+            position: relative;
+            transform: rotateX(0deg) rotateY(0deg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            z-index: 10; /* Ensure the input is above the video */
+        }
+
+        @keyframes rotateGrid {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            25% {
+                transform: rotateX(360deg) rotateY(0deg);
+            }
+            50% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+            75% {
+                transform: rotateX(0deg) rotateY(360deg);
+            }
+            100% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+        }
+
+        video, canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            z-index: 0; /* Ensure the video is below the visualizer grid */
+        }
+        
+        .black-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 1; /* Ensure the black overlay is below the canvas */
+        }
+        
+        canvas {
+            z-index: 3;
+        }
+        
+        .circles {
+            z-index: 4;
+            position: absolute;
+            bottom: -300;
+            left: -300;
+            animation: antiClockwiseCircularMotion 5s linear infinite;
+        }
+        
+        .circles2 {
+            z-index: 4;
+            position: absolute;
+            bottom: -300;
+            left: -300;
+            animation: circularMotion2 7s linear infinite;
+        }
+        
+        
+        @keyframes circularMotion {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+        
+        @keyframes antiClockwiseCircularMotion {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg) translateX(100px) rotate(360deg);
+            }
+        }
+        
+        @keyframes circularMotion2 {
+            0% {
+                transform: rotate(0deg) translateX(-80px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(-50px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="audioFile" accept="audio/*">
+    <div id="grid"></div>
+    <div class="black-overlay"></div>
+    <img id="circle1" class="circles" src="circles.svg" alt="SVG Circles">
+    <img id="circle2" class="circles2" src="circles.svg" alt="SVG Circles">
+    <video id="dancerVideo" src="dancers.mp4" autoplay loop muted></video>
+    <canvas id="videoCanvas"></canvas>
+
+    <script src="visualizer.js"></script>
+
+    
+</body>
+</html>
